@@ -9,11 +9,124 @@
   <meta name="keywords"
     content="app, Android App, Ticket to Ride, Board, Board Game, TTR, Game Setup, Board Setup, Utility, Score Assistant">
   <style>
+    html,
+    body,
+    div,
+    ul,
+    ol,
+    li,
+    dl,
+    dt,
+    dd,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    form,
+    p,
+    blockquote,
+    fieldset,
+    input,
+    abbr,
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    mark,
+    meter,
+    nav,
+    output,
+    progress,
+    section,
+    summary,
+    time {
+      margin: 0;
+      padding: 0;
+    }
+
+    article,
+    aside,
+    footer,
+    header,
+    hgroup,
+    nav,
+    section,
+    figure,
+    figcaption {
+      display: block;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+      font-weight: normal;
+      font-size: 16px;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1 {
+      margin-bottom: 0.25em;
+      line-height: 1.5em;
+      color: #333;
+    }
+
+    ul li,
+    ol li {
+      padding-bottom: 1em;
+      list-style-position: outside;
+      margin-left: 20px;
+    }
+
+    ul li {
+      list-style-type: disc;
+    }
+
+    ol li {
+      list-style-type: lower-alpha;
+    }
+
+    ul li ul {
+      padding-top: 1em;
+      margin-bottom: -1em;
+    }
+
+    p {
+      margin-bottom: 24px;
+    }
+
+    p.center {
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      border: 0;
+      margin-bottom: 0.25em;
+      margin-top: 0.25em;
+    }
+
     .center {
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 50%;
+      width: 100%;
+    }
+
+    @media only screen and (min-device-width: 568px) {
+      .center {
+        width: 50%;
+      }
     }
 
     .nav {
@@ -69,9 +182,21 @@
       float: right;
     }
 
+    @media only screen and (min-device-width: 568px) {
+      .image-col {
+        width: 100%;
+        text-align: center;
+        float: none;
+      }
+
+      .text-col {
+        width: 100%;
+      }
+    }
+
     .text-col {
       width: 40%;
-      margin-left: 5%;
+      margin-right: 5%;
     }
   </style>
 </head>
@@ -81,10 +206,10 @@
     <nav class="nav">
       <ul>
         <li><a href="#Why">Why time to count?</a></li>
-        <li><a href="#Enjoy">Enjoying every moment of play</a></li>
-        <li><a href="#Simple">Simple app mechanics</a></li>
-        <li><a href="#Bonuses">Bonuses for all extensions made easy</a></li>
-        <li><a href="#Links">Links</a></li>
+        <li><a href="#Enjoy">Enjoying every moment</a></li>
+        <li><a href="#Simple">Simple app</a></li>
+        <li><a href="#Bonuses">Bonuses for all extensions</a></li>
+        <li><a href="#Links">Useful Links</a></li>
       </ul>
     </nav>
     <section>
@@ -125,8 +250,9 @@
         enjoy the game. With the Time to Count app this is done smoothly and the app helps avoid errors. Install the
         Time
         to
-        count app directly from <a href="https://play.google.com/store/apps/details?id=com.timetocount"> Google Play
-          Store!</a></p>
+        count app directly from the Google Play Store!</p>
+      <center class="center"><a href="https://play.google.com/store/apps/details?id=com.timetocount"><img
+            src="google-play-store.png" alt="Download on the Google Play Store"></a></center>
     </section>
     <section>
       <h1 id="Enjoy">Enjoying every moment of play</h1>
@@ -195,7 +321,7 @@
         is to simply mark in the app who are the players with the longest route so the app awards the corresponding
         bonus.
         In the app options screen you can decide for what method to use.</p>
-      <img src="europe.jpeg" alt="Rails and Sails bonus points table" width="600" class="center">
+      <img src="europe.jpeg" alt="Playing Europe game" width="600" class="center">
       <p>The <b>Europe</b> variant has the stations that need to be counted for bonus points. Indicate how many stations
         were used and the app will award 4 points per each unused station as bonus.</p>
       <p>The <b>Märklin</b> variant include the merchandise tokens bonus. Input the final number of merchandise tokens
@@ -205,7 +331,7 @@
       <p>For the <b>Rails and Sails</b> game boards the ports give bonus points. Input for each port how many
         destination
         tickets were completed and bonus points are awarded according to the bonus table for each game board.</p>
-      <img src="germany.jpeg" alt="Rails and Sails bonus points table" width="600" class="center">
+      <img src="germany.jpeg" alt="Germany passenger pieces" width="600" class="center">
       <p>The <b>Germany</b> game board awards points for passengers. At the end of the game input how many passengers
         for
         each color each player has. The app awards points according to the rules.</p>
@@ -214,12 +340,12 @@
         per train car used for mountains. The app considers also counts the train cars set aside because of mountain
         routes
         for the purpose of checking how many were left unused at the end of the game. </p>
-      <img src="india.jpeg" alt="Rails and Sails bonus points table" width="600" class="center">
+      <img src="india.jpeg" alt="India game board" width="600" class="center">
       <p>The <b>India</b> game board offers players the change to win the Grand Tour Bonus according to mandalas built.
         For
         each player input the amount of destination tickets completed inside a mandala and the app awards the bonus
         according to the table in the rules.</p>
-      <img src="africa.jpeg" alt="Rails and Sails bonus points table" width="600" class="center">
+      <img src="africa.jpeg" alt="Paper with double route points" width="600" class="center">
       <p>For the <b>Heart of Africa</b> the bonuses are awarded for building routes using terrain cards. In order to be
         able
         to count points at the end, for this variant we need to take note during the game. So you need a bit of paper
@@ -234,7 +360,7 @@
         player how many routes were completed using terrain cards for each route length. The app awards the extra points
         for
         these routes.</p>
-      <img src="nederland.jpeg" alt="Rails and Sails bonus points table" width="600" class="center">
+      <img src="nederland.jpeg" alt="Playing Nederland game" width="600" class="center">
       <p>The <b>Nederland</b> game board gives out bonuses according to loans and toll tokens. Input for each player the
         amount of loans requested and/or toll tokens. The app automatically awards penalties when loans are requested.
         If
@@ -285,7 +411,7 @@
         end you just input the sum of all the numbers you input for each player during game play.</p>
     </section>
     <section>
-      <h1 id="Links">
+      <h1 id="Useful Links">
         Links
       </h1>
       <p>You can find all the game rules in PDF and
