@@ -1,10 +1,19 @@
 <script>
   function show(num) {
-      /* Access image by id and change 
-      the display property to block*/
       document.getElementById('image${num}')
           .style.display = "block";
-      document.getElementById('btnID${num}')
+      document.getElementById('showID${num}')
+          .style.display = "none";
+      document.getElementById('hideID${num}')
+          .style.display = "block";
+
+  }
+  function hide(num) {
+      document.getElementById('image${num}')
+          .style.display = "none";
+      document.getElementById('showID${num}')
+          .style.display = "block";
+      document.getElementById('hideID${num}')
           .style.display = "none";
   }
 </script>
@@ -118,10 +127,14 @@
     }
 
     .center {
-      display: block;
+      display: none;
       margin-left: auto;
       margin-right: auto;
       width: 100%;
+    }
+
+    .hidebutton {
+      display: none;
     }
 
     .item, .numero {
@@ -199,8 +212,11 @@
                 <div class="item">Cosa</div>
                 <div class="item">15 USD</div>
                 <div class="item">Ahora</div>
-                <button id="btnID00001" type="button" onclick="show(00001)" id="btnID00001">
-                  Show Image
+                <button id="showID00001" type="button" onclick="show(00001)">
+                  Ver Imagen
+                </button>
+                <button id="hideID00001" type="button" onclick="hide(00001)" class="hidebutton">
+                  Ver Imagen
                 </button>
             </li>
             <li>
