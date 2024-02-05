@@ -1,19 +1,19 @@
 <script>
-  function show(num) {
-      document.getElementById('image${num}')
+  function show() {
+      document.getElementById('image00001')
           .style.display = "block";
-      document.getElementById('showID${num}')
+      document.getElementById('showID00001')
           .style.display = "none";
-      document.getElementById('hideID${num}')
+      document.getElementById('hideID00001')
           .style.display = "block";
 
   }
   function hide(num) {
-      document.getElementById('image${num}')
+      document.getElementById('image00001')
           .style.display = "none";
-      document.getElementById('showID${num}')
+      document.getElementById('showID00001')
           .style.display = "block";
-      document.getElementById('hideID${num}')
+      document.getElementById('hideID00001')
           .style.display = "none";
   }
 </script>
@@ -212,10 +212,10 @@
                 <div class="item">Cosa</div>
                 <div class="item">15 USD</div>
                 <div class="item">Ahora</div>
-                <button id="showID00001" type="button" onclick="show(00001)">
+                <button id="showID00001" type="button" onclick="show()">
                   Ver Imagen
                 </button>
-                <button id="hideID00001" type="button" onclick="hide(00001)" class="hidebutton">
+                <button id="hideID00001" type="button" onclick="hide()" class="hidebutton">
                   Ver Imagen
                 </button>
             </li>
