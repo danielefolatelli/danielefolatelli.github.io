@@ -170,19 +170,17 @@
 
   <body lang=en-ES word-wrap:break-word>
     <script type = "text/javascript">
-      function show() {
-          document.getElementById('image00001')
+      function show(num) {
+        item = String(num).padStart(5, '0');
+          document.getElementById("image"+item)
               .style.display = "block";
-          document.getElementById('showID00001')
+          document.getElementById("showID"+item)
               .style.display = "none";
-          document.getElementById('hideID00001')
+          document.getElementById("hideID"+item)
               .style.display = "block";  
       }
       function hide(num) {
-        alert(num);
         item = String(num).padStart(5, '0');
-        alert(item);
-        alert("image"+item);
           document.getElementById("image"+item)
               .style.display = "none";
           document.getElementById("showID"+item)
@@ -193,7 +191,7 @@
     </script>
     <section>
       <h1>
-        Todo usado version 11
+        Todo usado version 12
       </h1>
       <!--<img src="rsz_family.jpg" alt="Ticket to Ride on table" width="900" class="center">-->
       <p>Todos los productos son usados y se retiran por mi domicilio.</p>
@@ -219,10 +217,10 @@
                 <div class="item">Cosa</div>
                 <div class="item">15 USD</div>
                 <div class="item">Ahora</div>
-                <button id="showID00001" type="button" onclick="show()" class="showbutton">
+                <button id="showID00001" type="button" onclick="show(1)" class="showbutton">
                   Ver Imagen
                 </button>
-                <button id="hideID00001" type="button" onclick="hide(00001)" class="hidebutton">
+                <button id="hideID00001" type="button" onclick="hide(1)" class="hidebutton">
                   Esconder Imagen
                 </button>
             </li>
@@ -231,7 +229,12 @@
                 <div class="item">Mas Cosa</div>
                 <div class="item">30000 Pesos</div>
                 <div class="item">Marzo</div>
-                <div></div>
+                <button id="showID00001" type="button" onclick="show(2)" class="showbutton">
+                  Ver Imagen
+                </button>
+                <button id="hideID00001" type="button" onclick="hide(2)" class="hidebutton">
+                  Esconder Imagen
+                </button>
             </li>
         </ul>
     </section>
