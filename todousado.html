@@ -103,10 +103,23 @@
         display: flex;
         justify-content: space-between;
     }
+    .numero {
+      width: 40;
+    }
 
     .numero::before {
         counter-increment: section;
-        content: counter(section);
+        content: counter(section)".";
+    }
+    
+    .desc {
+      text-align: left;
+      width: 200;
+    }
+
+    .money {
+      text-align: right;
+      width: 90;
     }
 
     .center {
@@ -126,10 +139,11 @@
     .hidebutton, .showbutton {
       height: 30;
     }
-
-    .item, .numero {
-        width: 100;
+    
+    .numero {
+        width: 20;
         text-align: right;
+        font-weight: bold;
     }
 
     @media only screen and (min-device-width: 568px) {
@@ -168,6 +182,8 @@
       border-bottom: 1px solid #CED0D5;
       overflow: hidden;
     }
+
+    ul.space_list li { margin-bottom: 1em; }
   </style>
 </head>
 
@@ -193,62 +209,58 @@
           document.getElementById("hideID"+item)
               .style.display = "none";
       }
+      function cargar() {
+        document.getElementById("cargar")
+              .style.display = "none";
+        const webElements = [{
+        "desc": "2 ollas de montaña marca Alpine con manija en funda",
+        "precio": "$20.000",
+        "disp" : "AHORA"
+        }, {
+        "desc": "Anorak rompeviento marca REI con bolsillos en funda",
+        "precio": "$15000",
+        "disp" : "MARZO"
+        }, {
+        "desc": "Cubremochila marca Doite en funda",
+        "precio": "$10000",
+        "disp" : "AHORA"
+        }];
+        var row = "";
+        for(let i = 0;i < webElements.length;i++)
+        {
+          item = String(i+1).padStart(5, '0');
+          row = row + "<div class='center'>"
+            + "<img id='image" + item + "' src='https://media.publit.io/file/USADOS" + item + ".png' class='image'>"
+            + "</div>"
+            + "<li>"
+            + "<div class='numero'></div>"
+            + "<div class='desc item'>"+webElements[i].desc+"</div>"
+            + "<div class='money item'>"+webElements[i].precio+"</div>"
+            + "<div class='item'>"+webElements[i].disp+"</div>"
+            + "<button id='showID"+ item +"' type='button' onclick='show(" + (i+1) + ")' class='showbutton'>Ver</button>"
+            + "<button id='hideID"+ item +"' type='button' onclick='hide(" + (i+1) + ")' class='hidebutton'>Esc</button>"
+            + "</li>"; 
+        };
+        document.getElementById('mylist').innerHTML += row;
+      }
     </script>
     <section>
       <h1>
-        Todo usado version 5 Feb 2024
+        Version 5 de Febrero 2024
       </h1>
-      <!--<img src="rsz_family.jpg" alt="Ticket to Ride on table" width="900" class="center">-->
       <p>Todos los productos son usados y se retiran por mi domicilio.</p>
       <p>Los pedis con el numero de item.</p>
-      <p>El boton de Ver hace que aparezca la imagen justo arriba de la linea del item.</p>
-      <p>Si en Disp dice "Ahora" los podes retirar cuanto antes. Caso contrario son para retirar los primeros dias de marzo, antes del 8 de Marzo.</p>
+      <p>El boton Ver hace que aparezca la imagen justo arriba de la linea del item.</p>
+      <p>Si dice "Ahora" los podes retirar cuanto antes. Caso contrario son para retirar los primeros dias de Marzo, antes del 8 de Marzo.</p>
     </section>
+    <div id="cargar">
+      <p>Click para cargar cosas</p>
+      <button type="button" onclick="cargar()">Cargar</button>
+    </div>
     <section>
-        <ul>
-            <!--Titulo-->
-            <li class="titulo">
-                <div>Item</div>
-                <div>Desc</div>
-                <div>$</div>
-                <div>Disp</div>
-                <div>Foto</div>
-            </li>
-            <!--Fin Titulo-->
-            <div class="center">
-              <img id="image00001" src="https://media.publit.io/file/USADOS00001.png" class="image">
-            </div>
-            <li>
-                <div class="numero"></div>
-                <div class="item">Cosa</div>
-                <div class="item">15 USD</div>
-                <div class="item">Ahora</div>
-                <button id="showID00001" type="button" onclick="show(1)" class="showbutton">
-                  Ver
-                </button>
-                <button id="hideID00001" type="button" onclick="hide(1)" class="hidebutton">
-                  Esconder
-                </button>
-            </li>
-            <div class="center">
-              <img id="image00002" src="https://media.publit.io/file/USADOS00002.png" class="image">
-            </div>
-            <li>
-                <div class="numero"></div>
-                <div class="item">Mas Cosa</div>
-                <div class="item">30000 Pesos</div>
-                <div class="item">Marzo</div>
-                <button id="showID00002" type="button" onclick="show(2)" class="showbutton">
-                  Ver
-                </button>
-                <button id="hideID00002" type="button" onclick="hide(2)" class="hidebutton">
-                  Esconder
-                </button>
-            </li>
-        </ul>
+      <ul class="space_list" id="mylist"></ul>
     </section>
-
-      </body>
+  </body>
   <footer class="footer">
     <p><a href="mailto:daniele.folatelli@gmail.com">Contactame por e-mail</a></p>
   </footer>
