@@ -109,10 +109,13 @@
     }
 
     .center {
-      display: none;
       margin-left: auto;
       margin-right: auto;
       width: 100%;
+    }
+
+    .showbutton {
+      display: none;
     }
 
     .hidebutton {
@@ -174,21 +177,20 @@
           document.getElementById('showID00001')
               .style.display = "none";
           document.getElementById('hideID00001')
-              .style.display = "block";
-    
+              .style.display = "block";  
       }
       function hide(num) {
-          document.getElementById('image00001')
+          document.getElementById('image${num}')
               .style.display = "none";
-          document.getElementById('showID00001')
+          document.getElementById('showID${num}')
               .style.display = "block";
-          document.getElementById('hideID00001')
+          document.getElementById('hideID${num}')
               .style.display = "none";
       }
     </script>
     <section>
       <h1>
-        Todo usado version 4
+        Todo usado version 5
       </h1>
       <!--<img src="rsz_family.jpg" alt="Ticket to Ride on table" width="900" class="center">-->
       <p>Todos los productos son usados y se retiran por mi domicilio.</p>
@@ -214,10 +216,10 @@
                 <div class="item">Cosa</div>
                 <div class="item">15 USD</div>
                 <div class="item">Ahora</div>
-                <button id="showID00001" type="button" onclick="show()">
+                <button id="showID00001" type="button" onclick="show()" class="showbutton">
                   Ver Imagen
                 </button>
-                <button id="hideID00001" type="button" onclick="hide()" class="hidebutton">
+                <button id="hideID00001" type="button" onclick="hide(00001)" class="hidebutton">
                   Ver Imagen
                 </button>
             </li>
