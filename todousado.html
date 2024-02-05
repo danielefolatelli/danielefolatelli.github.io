@@ -189,7 +189,7 @@
 
 <div class="wrapper">
 
-  <body lang=en-ES word-wrap:break-word>
+  <body lang=en-ES word-wrap:break-word onload = "cargar()">
     <script type = "text/javascript">
       function show(num) {
         item = String(num).padStart(5, '0');
@@ -210,8 +210,6 @@
               .style.display = "none";
       }
       function cargar() {
-        document.getElementById("cargar")
-              .style.display = "none";
         const webElements = [{
         "desc": "2 ollas de montaña marca Alpine con manija en funda",
         "precio": "$20.000",
@@ -322,10 +320,6 @@
       <p>Todos los productos son usados y se retiran por mi domicilio.</p>
       <p>Los pedis con el numero de item.</p>
       </section>
-    <div id="cargar">
-      <p>Click para cargar cosas</p>
-      <button type="button" onclick="cargar()">Cargar</button>
-    </div>
     <section>
       <ul class="space_list" id="mylist"></ul>
     </section>
