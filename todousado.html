@@ -215,15 +215,42 @@
         const webElements = [{
         "desc": "2 ollas de montaña marca Alpine con manija en funda",
         "precio": "$20.000",
-        "disp" : "AHORA"
         }, {
         "desc": "Anorak rompeviento marca REI con bolsillos en funda",
-        "precio": "$15000",
-        "disp" : "MARZO"
+        "precio": "$15.000",
         }, {
         "desc": "Cubremochila marca Doite en funda",
-        "precio": "$10000",
-        "disp" : "AHORA"
+        "precio": "$10.000",
+        }, {
+        "desc": "Filtro de agua marca Pur con funda",
+        "precio": "$8.000",
+        }, {
+        "desc": "Escalera de aluminio plegable de 4 tramos",
+        "precio": "$120.000",
+        }, {
+        "desc": "Monitor Samsung LED 22 pulgadas",
+        "precio": "$60.000",
+        }, {
+        "desc": "Teclado Genius USB ",
+        "precio": "$7.000",
+        }, {
+        "desc": "Casco bicicleta marca Cool para adulto",
+        "precio": "$20.000",
+        }, {
+        "desc": "Palo trekking regulable marca Masters",
+        "precio": "$15.000",
+        }, {
+        "desc": "Palo trekking regulable marca Waterdog",
+        "precio": "$10.000",
+        }, {
+        "desc": "Dos Palos de trekking marca The Fit Life con funda",
+        "precio": "$25.000",
+        }, {
+        "desc": "Zapatos de montaña impremeables marca Columbia talle 43",
+        "precio": "$10.000",
+        }, {
+        "desc": "Campera imperable azul Patagonia",
+        "precio": "$175.000",
         }];
         var row = "";
         for(let i = 0;i < webElements.length;i++)
@@ -236,7 +263,6 @@
             + "<div class='numero'></div>"
             + "<div class='desc item'>"+webElements[i].desc+"</div>"
             + "<div class='money item'>"+webElements[i].precio+"</div>"
-            + "<div class='item'>"+webElements[i].disp+"</div>"
             + "<button id='showID"+ item +"' type='button' onclick='show(" + (i+1) + ")' class='showbutton'>Ver</button>"
             + "<button id='hideID"+ item +"' type='button' onclick='hide(" + (i+1) + ")' class='hidebutton'>Esc</button>"
             + "</li>"; 
@@ -250,9 +276,7 @@
       </h1>
       <p>Todos los productos son usados y se retiran por mi domicilio.</p>
       <p>Los pedis con el numero de item.</p>
-      <p>El boton Ver hace que aparezca la imagen justo arriba de la linea del item.</p>
-      <p>Si dice "Ahora" los podes retirar cuanto antes. Caso contrario son para retirar los primeros dias de Marzo, antes del 8 de Marzo.</p>
-    </section>
+      </section>
     <div id="cargar">
       <p>Click para cargar cosas</p>
       <button type="button" onclick="cargar()">Cargar</button>
