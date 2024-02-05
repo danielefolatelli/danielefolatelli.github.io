@@ -171,7 +171,6 @@
   <body lang=en-ES word-wrap:break-word>
     <script type = "text/javascript">
       function show() {
-        alert("pasa");
           document.getElementById('image00001')
               .style.display = "block";
           document.getElementById('showID00001')
@@ -180,19 +179,20 @@
               .style.display = "block";  
       }
       function hide(num) {
-        alert("hide");
         alert(num);
-          document.getElementById('image${num}')
+        item = String(num).padStart(5, '0');
+        alert(item);
+          document.getElementById('image${item}')
               .style.display = "none";
-          document.getElementById('showID${num}')
+          document.getElementById('showID${item}')
               .style.display = "block";
-          document.getElementById('hideID${num}')
+          document.getElementById('hideID${item}')
               .style.display = "none";
       }
     </script>
     <section>
       <h1>
-        Todo usado version 8
+        Todo usado version 9
       </h1>
       <!--<img src="rsz_family.jpg" alt="Ticket to Ride on table" width="900" class="center">-->
       <p>Todos los productos son usados y se retiran por mi domicilio.</p>
