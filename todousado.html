@@ -180,6 +180,8 @@
               .style.display = "block";  
       }
       function hide(num) {
+        alert("hide");
+        alert("${num}");
           document.getElementById('image${num}')
               .style.display = "none";
           document.getElementById('showID${num}')
@@ -190,7 +192,7 @@
     </script>
     <section>
       <h1>
-        Todo usado version 6
+        Todo usado version 7
       </h1>
       <!--<img src="rsz_family.jpg" alt="Ticket to Ride on table" width="900" class="center">-->
       <p>Todos los productos son usados y se retiran por mi domicilio.</p>
@@ -220,7 +222,7 @@
                   Ver Imagen
                 </button>
                 <button id="hideID00001" type="button" onclick="hide(00001)" class="hidebutton">
-                  Ver Imagen
+                  Esconder Imagen
                 </button>
             </li>
             <li>
