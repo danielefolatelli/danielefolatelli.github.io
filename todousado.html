@@ -1,3 +1,13 @@
+<script>
+  function show(num) {
+      /* Access image by id and change 
+      the display property to block*/
+      document.getElementById('image${num}')
+          .style.display = "block";
+      document.getElementById('btnID${num}')
+          .style.display = "none";
+  }
+</script>
 <head>
   <link rel="shortcut icon" type="image/x-icon" href="ic_launcher.png">
   <meta http-equiv=Content-Type content="text/html; charset=utf-8">
@@ -181,12 +191,17 @@
                 <div>Foto</div>
             </li>
             <!--Fin Titulo-->
+            <div class="center">
+              <img id="image00001" src="https://media.publit.io/file/USADOS00001.png">
+            </div>
             <li>
                 <div class="numero"></div>
                 <div class="item">Cosa</div>
                 <div class="item">15 USD</div>
                 <div class="item">Ahora</div>
-                <div><img alt="Time to count logo" src="https://media.publit.io/file/USADOS00001.png"></div>
+                <button id="btnID00001" type="button" onclick="show(00001)" id="btnID00001">
+                  Show Image
+                </button>
             </li>
             <li>
                 <div class="numero"></div>
