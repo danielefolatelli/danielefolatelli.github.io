@@ -103,15 +103,7 @@
         display: flex;
         justify-content: space-between;
     }
-    .numero {
-      width: 40;
-    }
 
-    .numero::before {
-        counter-increment: section;
-        content: counter(section)".";
-    }
-    
     .desc {
       text-align: left;
       width: 200;
@@ -189,28 +181,9 @@
 
 <div class="wrapper">
 
-  <body lang=en-ES word-wrap:break-word onload = "cargar()">
+  <body lang=en-ES word-wrap:break-word onload = "cargar(webElements)">
     <script type = "text/javascript">
-      function show(num) {
-        item = String(num).padStart(5, '0');
-          document.getElementById("image"+item)
-              .style.display = "block";
-          document.getElementById("showID"+item)
-              .style.display = "none";
-          document.getElementById("hideID"+item)
-              .style.display = "block";  
-      }
-      function hide(num) {
-        item = String(num).padStart(5, '0');
-          document.getElementById("image"+item)
-              .style.display = "none";
-          document.getElementById("showID"+item)
-              .style.display = "block";
-          document.getElementById("hideID"+item)
-              .style.display = "none";
-      }
-      function cargar() {
-        const webElements = [{
+      const webElements = [{
         "desc": "2 ollas de montaña marca Alpine con manija en funda",
         "precio": "$20.000",
         }, {
@@ -294,7 +267,44 @@
         }, {
         "desc": "Casco bicicleta Raleigh R35 regulable",
         "precio": "$18.000",
+        }, {
+        "desc": "Heladera conservadora Coleman",
+        "precio": "$30.000",
+        }, {
+        "desc": "Cuadro enmarcado de El Señor de los Anillos",
+        "precio": "$22.000",
         }];
+      function show(num) {
+        item = String(num).padStart(5, '0');
+          document.getElementById("image"+item)
+              .style.display = "block";
+          document.getElementById("showID"+item)
+              .style.display = "none";
+          document.getElementById("hideID"+item)
+              .style.display = "block";  
+      }
+      function hide(num) {
+        item = String(num).padStart(5, '0');
+          document.getElementById("image"+item)
+              .style.display = "none";
+          document.getElementById("showID"+item)
+              .style.display = "block";
+          document.getElementById("hideID"+item)
+              .style.display = "none";
+      }
+      function filtrar(filtro,webElements) {
+        for(let i=0;i < webElements.length;i++) {
+          item = String(i+1).padStart(5, '0');
+          text = webElements[i].desc;
+          if(text.includes(filtro)) {
+            document.getElementById('row'+item).style.display = "flex";
+          }
+          else {
+            document.getElementById('row'+item).style.display = "none";
+          }
+        };
+      }
+      function cargar(webElements) {
         var row = "";
         for(let i = 0;i < webElements.length;i++)
         {
@@ -302,8 +312,8 @@
           row = row + "<div class='center'>"
             + "<img id='image" + item + "' src='https://media.publit.io/file/USADOS" + item + ".png' class='image'>"
             + "</div>"
-            + "<li>"
-            + "<div class='numero'></div>"
+            + "<li id='row" + item + "'>"
+            + "<div class='numero'>" + (i+1) + ".</div>"
             + "<div class='desc item'>"+webElements[i].desc+"</div>"
             + "<div class='money item'>"+webElements[i].precio+"</div>"
             + "<button id='showID"+ item +"' type='button' onclick='show(" + (i+1) + ")' class='showbutton'>Ver</button>"
@@ -315,10 +325,15 @@
     </script>
     <section>
       <h1>
-        Version 5 de Febrero 2024
+        Actualizada Version 5 de Febrero 2024
       </h1>
       <p>Todos los productos son usados y se retiran por mi domicilio.</p>
       <p>Los pedis con el numero de item.</p>
+      </section>
+      <section>
+        <p>Se puede filtrar por la descripción.</p>
+      <input type="text" name="enter" class="enter" value="" id="filtro"/>
+      <button id='filtrar' type='button' onclick="filtrar(document.getElementById('filtro').value,webElements)">Filtrar</button>
       </section>
     <section>
       <ul class="space_list" id="mylist"></ul>
