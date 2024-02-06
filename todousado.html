@@ -137,6 +137,7 @@
         width: 20;
         text-align: right;
         font-weight: bold;
+        margin-right: 12px;
     }
 
     .enter {
@@ -288,6 +289,21 @@
         }, {
         "desc": "Cuadro enmarcado de El Señor de los Anillos",
         "precio": "$22.000",
+        }, {
+        "desc": "Campera para niño talle 8",
+        "precio": "$25.000",
+        }, {
+        "desc": "Campera para niño talle 10",
+        "precio": "$25.000",
+        }, {
+        "desc": "Alfombra grande única hecha a mano",
+        "precio": "$200.000",
+        }, {
+        "desc": "Pizarra doble con rollo",
+        "precio": "$60.000",
+        }, {
+        "desc": "Caartera Ty",
+        "precio": "$8.000",
         }];
       function show(num) {
         item = String(num).padStart(5, '0');
@@ -324,16 +340,17 @@
         for(let i = 0;i < webElements.length;i++)
         {
           item = String(i+1).padStart(5, '0');
-          row = row + "<div class='center'>"
-            + "<img id='image" + item + "' src='https://media.publit.io/file/USADOS" + item + ".jpg' class='image'>"
-            + "</div>"
+          row = row 
             + "<li id='row" + item + "'>"
             + "<div class='numero'>" + (i+1) + ".</div>"
             + "<div class='desc item'>"+webElements[i].desc+"</div>"
             + "<div class='money item'>"+webElements[i].precio+"</div>"
             + "<button id='showID"+ item +"' type='button' onclick='show(" + (i+1) + ")' class='showbutton'>Ver</button>"
             + "<button id='hideID"+ item +"' type='button' onclick='hide(" + (i+1) + ")' class='hidebutton'>Esc</button>"
-            + "</li>"; 
+            + "</li>"
+            + "<div class='center'>"
+            + "<img id='image" + item + "' src='https://media.publit.io/file/USADOS" + item + ".jpg' class='image'>"
+            + "</div>"; 
         };
         document.getElementById('mylist').innerHTML += row;
       }
