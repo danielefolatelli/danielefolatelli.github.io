@@ -334,6 +334,12 @@
         }, {
         "desc": "Espejo antiguo 85 cm X 60 cm",
         "precio": "$120.000",
+        }, {
+        "desc": "Espejo antiguo 70 cm",
+        "precio": "$80.000",
+        }, {
+        "desc": "Auriculares Hyperx",
+        "precio": "$40.000",
         }];
       function show(num) {
         item = String(num).padStart(5, '0');
@@ -357,7 +363,7 @@
         for(let i=0;i < webElements.length;i++) {
           item = String(i+1).padStart(5, '0');
           text = webElements[i].desc;
-          if(text.includes(filtro)) {
+          if(text.toLowerCase().includes(filtro.toLowerCase())) {
             document.getElementById('row'+item).style.display = "flex";
           }
           else {
