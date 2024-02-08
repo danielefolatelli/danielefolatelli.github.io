@@ -148,7 +148,7 @@
       border: none;
     }
 
-    #filtrar {
+    .filtrar {
       margin-left: 30px;
       height: 30;
       font-size: 18px;
@@ -209,7 +209,7 @@
         "precio": "$9.000", "vendido": true,
         }, {
         "desc": "Anorak rompeviento marca REI con bolsillos en funda",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": true,
         }, {
         "desc": "Cubremochila marca Doite en funda",
         "precio": "$10.000", "vendido": false,
@@ -236,13 +236,13 @@
         "precio": "$7.000", "vendido": false,
         }, {
         "desc": "Dos Palos de trekking marca The Fit Life con funda",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": true,
         }, {
         "desc": "Zapatos de montaña impremeables marca Columbia talle 43",
         "precio": "$35.000", "vendido": true,
         }, {
         "desc": "Campera imperable azul Patagonia",
-        "precio": "$100.000", "vendido": false,
+        "precio": "$100.000", "vendido": true,
         }, {
         "desc": "Pantalon impermeable de adulto Patagonia",
         "precio": "$48.000", "vendido": false,
@@ -521,8 +521,9 @@
       <section>
         <p>Se puede filtrar por la descripción.</p>
       <input type="text" name="enter" class="enter" value="" id="filtro"/>
-      <button id='filtrar' type='button' onclick="filtrar(document.getElementById('filtro').value,webElements)">Filtrar</button>
-      </section>
+      <button class='filtrar' type='button' onclick="filtrar(document.getElementById('filtro').value,webElements)">Filtrar</button>
+      <button class='filtrar' type='button' onclick="filtrar('',webElements)">Sacar Filtro</button>
+    </section>
     <section>
       <ul class="space_list" id="mylist"></ul>
     </section>
