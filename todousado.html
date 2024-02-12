@@ -82,6 +82,9 @@
     p {
       margin-bottom: 24px;
     }
+    .negrita {
+      font-weight: bold;
+    }
 
     p.center {
       text-align: center;
@@ -955,7 +958,7 @@
       <p>Se puede ver la imagen de cada item presionando el boton de Ver y luego se puede sacar presionando el mismo boton que dice Esc.</p>
       </section>
       <section>
-        <p>Se puede filtrar por la descripción.</p>
+        <p class="negrita">Usar filtro para buscar mejor.</p>
       <input type="text" name="enter" class="enter" value="" id="filtro"/>
       <button class='filtrar' type='button' onclick="filtrar(document.getElementById('filtro').value,webElements)">Filtrar</button>
       <button class='filtrar' type='button' onclick="filtrar('',webElements)">Volver</button>
