@@ -912,7 +912,7 @@
         "precio": "$80.000", "vendido": false,
         }, {
         "desc": "2 banquitos altos para desayunador",
-        "precio": "$30.000", "vendido": false,
+        "precio": "$30.000", "vendido": true,
         }, {
         "desc": "Mesa maciza ratona pinotea 88x150x44",
         "precio": "$250.000", "vendido": false,
@@ -1048,6 +1048,9 @@
             document.getElementById('row'+item).style.display = "none";
           }
         };
+        if (filtro == '') {
+          document.getElementById('filtro').value = "";
+        }
       }
       function cargar(webElements) {
         var row = "";
