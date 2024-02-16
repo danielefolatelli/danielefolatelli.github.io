@@ -1,0 +1,377 @@
+
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="icons8-hot-price-tag-100.png">
+  <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+  <title>Juegos de Mesa - Todo Usado</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Daniele Folatelli">
+  <style>
+    html,
+    body,
+    div,
+    ul,
+    ol,
+    li,
+    dl,
+    dt,
+    dd,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    form,
+    p,
+    blockquote,
+    fieldset,
+    input,
+    abbr,
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    mark,
+    meter,
+    nav,
+    output,
+    progress,
+    section,
+    summary,
+    time {
+      margin: 0;
+      padding: 0;
+    }
+
+    article,
+    aside,
+    footer,
+    header,
+    hgroup,
+    nav,
+    section,
+    figure,
+    figcaption {
+      display: block;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+      font-weight: normal;
+      font-size: 16px;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+      counter-reset: section;
+    }
+
+    h1 {
+      margin-bottom: 0.25em;
+      line-height: 1.5em;
+      color: royalblue;
+    }
+
+    p {
+      margin-bottom: 24px;
+    }
+    .negrita {
+      font-weight: bold;
+    }
+
+    p.center {
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      border: 0;
+      margin-bottom: 0.25em;
+      margin-top: 0.25em;
+    }
+    .titulo {
+        font-weight: bold;
+        font-size: large;
+        color: royalblue;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .desc {
+      text-align: left;
+      width: 200;
+    }
+
+    .money {
+      text-align: right;
+      width: 90;
+    }
+
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .showbutton {
+      display: block;
+    }
+
+    .hidebutton, .image {
+      display: none;
+    }
+
+    .hidebutton, .showbutton {
+      height: 30;
+      font-size: 18px;
+    }
+    
+    .numero {
+        width: 20;
+        text-align: right;
+        font-weight: bold;
+        margin-right: 12px;
+    }
+
+    .enter {
+      padding: 12px;
+      background: #f2f2f2;
+      border-radius: 8px;
+      width: 300 px;
+      border: none;
+    }
+
+    .vendido {
+      font-style: oblique;
+      text-decoration: line-through;
+    }
+
+    @media only screen and (min-device-width: 568px) {
+      .center {
+        width: 90%;
+      }
+    }
+
+    .wrapper {
+      line-height: 1.5em;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 20px;
+      border: 0;
+      min-height: 100%;
+      background-color: #fff;
+      color: #556;
+    }
+
+    .footer {
+      font-size: 18px;
+      text-align: center;
+      clear: both;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    a {
+      color: #0070c9;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 10px 0;
+      clear: both;
+      border-bottom: 1px solid #CED0D5;
+      overflow: hidden;
+    }
+
+    ul.space_list li { margin-bottom: 1em; }
+  </style>
+</head>
+
+<div class="wrapper">
+
+  <body lang=en-ES word-wrap:break-word onload = "cargar(webElements)">
+    <script type = "text/javascript">
+      const webElements = [{
+        "desc": "Juego de mesa Dominion Big Box (en ingles), con Alchemy y Prosperity ",
+        "precio": "$60.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Diplomacy (version original en ingles)",
+        "precio": "$30.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Clue",
+        "precio": "$11.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Crucigrama, version local del Scrabble ",
+        "precio": "$6.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Risk (en ingles), version de EEUU del TEG ",
+        "precio": "$20.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa La Clave del Escorpion",
+        "precio": "$5.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Jumanji",
+        "precio": "$8.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Pit (original en ingles)",
+        "precio": "$21.000", "vendido": true,
+        }, {
+        "desc": "Juego de mesa Rack-O (original en ingles)",
+        "precio": "$22.000", "vendido": true,
+        }, {
+        "desc": "Juego de cartas Set (original en ingles)",
+        "precio": "$18.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Codigo Secreto",
+        "precio": "$19.000", "vendido": true,
+        }, {
+        "desc": "Juego de mesa Tuf.Abet (original en ingles)",
+        "precio": "$12.000", "vendido": true,
+        }, {
+        "desc": "Juego de mesa Qwirkle (en ingles) ",
+        "precio": "$20.000", "vendido": false,
+        },{
+        "desc": "Juego de mesa Carcassone (original en ingles) con dos cajas de expansiones",
+        "precio": "$50.000", "vendido": true,
+        }, {
+        "desc": "Juego de mesa 7wonders Duel (original en ingles) con expansion Pantheon",
+        "precio": "$38.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Carcassone Junior (original en ingles)",
+        "precio": "$28.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Forbidden Island (en ingles)",
+        "precio": "$20.000", "vendido": false,
+        }, {
+        "desc": "Juego de cartas 1000 millas",
+        "precio": "11.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Lost Cities 2 player (en ingles)",
+        "precio": "$18.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Clue Jr (en ingles)",
+        "precio": "$18.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa TransEuropa (en ingles)",
+        "precio": "$48.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Power Grid (en ingles)",
+        "precio": "$48.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Ticket to Ride Rails & Sails (en ingles)",
+        "precio": "$68.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Ticket To Ride Europa (en ingles)",
+        "precio": "$48.000", "vendido": false,
+        }, {
+        "desc": "Expansion Juego de mesa Ticket to Ride Europa 1912 (en ingles)",
+        "precio": "$30.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Ticket to Ride (en ingles) Mapa EEUU",
+        "precio": "$48.000", "vendido": true,
+        }, {
+        "desc": "Expansion Juego de mesa Ticket to Ride EEUU 1910 (en ingles)",
+        "precio": "$30.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Ticket to Ride New York (en ingles)",
+        "precio": "$30.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Ticket to Ride Nordic Countries (en ingles)",
+        "precio": "$46.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Ticket to India/Switzrland Countries (en ingles)",
+        "precio": "$38.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Ticket to Ride United Kingdom / Pennsylvania (en ingles)",
+        "precio": "$38.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Ticket to Ride Poland (en ingles)",
+        "precio": "$28.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa Ticket to Ride Märklin Alemania (en ingles)",
+        "precio": "$28.000", "vendido": false,
+        }, {
+        "desc": "Juego de mesa 7 Wonders (en ingles)",
+        "precio": "$65.000", "vendido": false,
+        }];
+      function show(num) {
+        item = String(num).padStart(5, '0');
+          document.getElementById("image"+item)
+              .style.display = "block";
+          document.getElementById("showID"+item)
+              .style.display = "none";
+          document.getElementById("hideID"+item)
+              .style.display = "block";  
+      }
+      function hide(num) {
+        item = String(num).padStart(5, '0');
+          document.getElementById("image"+item)
+              .style.display = "none";
+          document.getElementById("showID"+item)
+              .style.display = "block";
+          document.getElementById("hideID"+item)
+              .style.display = "none";
+      }
+      
+      function cargar(webElements) {
+        var row = "";
+        for(let i = 0;i < webElements.length;i++)
+        {
+          item = String(i+1).padStart(5, '0') + 80;
+          if (webElements[i].vendido) {
+            row = row
+            + "<li id='row" + item + "' class='vendido'>"
+            + "<div class='numero'>" + (i+1) + ".</div>"
+            + "<div class='desc item'>"+webElements[i].desc+"</div>"
+            + "<div class='money item'>"+webElements[i].precio+"</div>"
+            + "<div>VENDIDO</div>"
+            + "</li>"; 
+          }
+          else {
+            row = row
+            + "<li id='row" + item + "'>"
+            + "<div class='numero'>" + (i+1) + ".</div>"
+            + "<div class='desc item'>"+webElements[i].desc+"</div>"
+            + "<div class='money item'>"+webElements[i].precio+"</div>"
+            + "<button id='showID"+ item +"' type='button' onclick='show(" + (i+1) + ")' class='showbutton'>Ver</button>"
+            + "<button id='hideID"+ item +"' type='button' onclick='hide(" + (i+1) + ")' class='hidebutton'>Esc</button>"
+            + "</li>"
+            + "<div class='center'>"
+            + "<img id='image" + item + "' src='https://media.publit.io/file/USADOS" + item + ".jpg' class='image'>"
+            + "</div>"; 
+          }
+        };
+        document.getElementById('mylist').innerHTML += row;
+      }
+    </script>
+    <section>
+      <h1>
+        Lista de juegos de Mesa
+      </h1>
+      <p style="font-size: 13px; margin-left: 20px;">
+        Actualizada Version 16 de Febrero 2024
+      </p>
+      <p>Enviar pedido por mensaje Whatsapp al 1131843732. Los pedidos se retiran por el partido de Tigre en norte del gran Buenos Aires.</p>
+      <p>Revisar periodicamente la lista ya que se borra lo que se vende y se agregan items.</p>
+      <p>Se puede ver la imagen de cada item presionando el boton de Ver y luego se puede sacar presionando el mismo boton que dice Esc.</p>
+      </section>
+    <section>
+      <ul class="space_list" id="mylist"></ul>
+    </section>
+  </body>
+  <footer class="footer">
+    <p><a href="mailto:daniele.folatelli@gmail.com">Contactame por e-mail</a></p>
+  </footer>
+</div>
+
+</html>
