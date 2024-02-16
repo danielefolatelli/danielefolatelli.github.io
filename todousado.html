@@ -157,6 +157,7 @@
 
     .filtrar {
       margin-left: 30px;
+      margin-bottom: 10px;
       height: 30;
       font-size: 18px;
     }
@@ -211,861 +212,873 @@
 
   <body lang=en-ES word-wrap:break-word onload = "cargar(webElements)">
     <script type = "text/javascript">
+      const Categorias = [
+        "Juegos/Juguetes",
+        "Decoración/Casa",
+        "Cocina",
+        "Muebles",
+        "Deportes/Fitness",
+        "Ropa",
+        "Libros",
+        "Jardin",
+        "Tecnología",
+        "Trekking",
+        "Otros"]
       const webElements = [{
         "desc": "2 ollas de montaña marca Alpine con manija en funda",
-        "precio": "$9.000", "vendido": true,
+        "precio": "$9.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Anorak rompeviento marca REI con bolsillos en funda",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Cubremochila marca Doite en funda",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 9
         }, {
         "desc": "Filtro de agua marca Pur con funda",
-        "precio": "$5.000", "vendido": true,
+        "precio": "$5.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Escalera de aluminio plegable de 4 tramos",
-        "precio": "$120.000", "vendido": true,
+        "precio": "$120.000", "vendido": true, "categoria": 7
         }, {
         "desc": "Monitor Samsung LED 22 pulgadas",
-        "precio": "$75.000", "vendido": false,
+        "precio": "$75.000", "vendido": false, "categoria": 8
         }, {
         "desc": "Teclado Genius USB ",
-        "precio": "$5.000", "vendido": false,
+        "precio": "$5.000", "vendido": false, "categoria": 8
         }, {
         "desc": "Casco bicicleta marca Cool para adulto",
-        "precio": "$6.000", "vendido": true,
+        "precio": "$6.000", "vendido": true, "categoria": 4
         }, {
         "desc": "Palo trekking regulable marca Masters",
-        "precio": "$9.000", "vendido": true,
+        "precio": "$9.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Palo trekking regulable marca Waterdog",
-        "precio": "$7.000", "vendido": true,
+        "precio": "$7.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Dos Palos de trekking marca The Fit Life con funda",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Zapatos de montaña impremeables marca Columbia talle 43",
-        "precio": "$35.000", "vendido": true,
+        "precio": "$35.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Campera imperable azul Patagonia",
-        "precio": "$100.000", "vendido": true,
+        "precio": "$100.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Pantalon impermeable de adulto Patagonia",
-        "precio": "$48.000", "vendido": false,
+        "precio": "$48.000", "vendido": false, "categoria": 9
         }, {
         "desc": "Carpa de montaña The North Face 3 personas Lunarfire",
-        "precio": "$125.000", "vendido": true,
+        "precio": "$125.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Bolso de dormir The North Face adulto Bluee Kazoo",
-        "precio": "$80.000", "vendido": true,
+        "precio": "$80.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Bolso de dormir Egge Nylsuisse naranja para adulto",
-        "precio": "$50.000", "vendido": true,
+        "precio": "$50.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Bolso de dormir Egge Nylsuisse naranja para adulto",
-        "precio": "$50.000", "vendido": true,
+        "precio": "$50.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Bolso de dormir Calidor niño",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 9
         }, {
         "desc": "Bolso de dormir Calidor niño",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 9
         }, {
         "desc": "Bandeja de decoración",
-        "precio": "$10.000", "vendido": true,
+        "precio": "$10.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Secador de platos",
-        "precio": "$18.000", "vendido": true,
+        "precio": "$18.000", "vendido": true, "categoria": 2
         }, {
         "desc": "Jaula decoración",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Portaequipaje auto",
-        "precio": "$5.000", "vendido": false,
+        "precio": "$5.000", "vendido": false, "categoria": 10
         }, {
         "desc": "Sillas de Hierro (precio cada una)",
-        "precio": "$70.000", "vendido": false,
+        "precio": "$70.000", "vendido": false, "categoria": 7
         }, {
         "desc": "TV inteligente Noblex LED 108cm",
-        "precio": "$215.000", "vendido": false,
+        "precio": "$215.000", "vendido": false, "categoria": 8
         }, {
         "desc": "TV LG 42 pulgadas",
-        "precio": "$140.000", "vendido": true,
+        "precio": "$140.000", "vendido": true, "categoria": 8
         }, {
         "desc": "Casco bicicleta Raleigh R35 regulable",
-        "precio": "$18.000", "vendido": false,
+        "precio": "$18.000", "vendido": false, "categoria": 4
         }, {
         "desc": "Heladera conservadora Coleman",
-        "precio": "$20.000", "vendido": true,
+        "precio": "$20.000", "vendido": true, "categoria": 10
         }, {
         "desc": "Cuadro enmarcado de El Señor de los Anillos",
-        "precio": "$14.000", "vendido": true,
+        "precio": "$14.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Campera para niño talle 8",
-        "precio": "$7.000", "vendido": true,
+        "precio": "$7.000", "vendido": true, "categoria": 5
         }, {
         "desc": "Campera para niño talle 10",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 5
         }, {
         "desc": "Alfombra grande única hecha a mano",
-        "precio": "$200.000", "vendido": false,
+        "precio": "$200.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Pizarra doble con rollo",
-        "precio": "$35.000", "vendido": false,
+        "precio": "$35.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Cartera Ty",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Mesita de luz nordica",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 3
         }, {
         "desc": "Mesita de luz nordica",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 3
         }, {
         "desc": "Mueble de pinotea",
-        "precio": "$120.000", "vendido": true,
+        "precio": "$120.000", "vendido": true, "categoria": 3
         }, {
         "desc": "Portavela o florero de decoración (2)",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Balanza de pie",
-        "precio": "$18.000", "vendido": true,
+        "precio": "$18.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Banquito",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Sillon matero",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Sillon Pie de Cama",
-        "precio": "$35.000", "vendido": false,
+        "precio": "$35.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Espejo antiguo 160 cm x 60 cm",
-        "precio": "$150.000", "vendido": true,
+        "precio": "$150.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Espejo antiguo 85 cm X 60 cm",
-        "precio": "$120.000", "vendido": false,
+        "precio": "$120.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Espejo antiguo 70 cm",
-        "precio": "$80.000", "vendido": false,
+        "precio": "$80.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Auriculares Hyperx",
-        "precio": "$40.000", "vendido": true,
+        "precio": "$40.000", "vendido": true, "categoria": 8
         }, {
         "desc": "Pistola juguete Silenciadora Elite NERF FORTNITE con 10 balas cerradas",
-        "precio": "$45.000", "vendido": false,
+        "precio": "$45.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Arco Prana Junior para adolescentes y 2 flechas",
-        "precio": "$60.000", "vendido": false,
+        "precio": "$60.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Coleccion de 54 autitos de juguete y rueda Hot Wheels para guardar",
-        "precio": "$100.000", "vendido": false,
+        "precio": "$100.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Silla de auto para niño de hasta 12 años",
-        "precio": "$30.000", "vendido": false,
+        "precio": "$30.000", "vendido": false, "categoria": 10
         }, {
         "desc": "Silla de auto para niño de hasta 12 años",
-        "precio": "$30.000", "vendido": false,
+        "precio": "$30.000", "vendido": false, "categoria": 10
         }, {
         "desc": "Juego de 6 sillas estilo Windsore",
-        "precio": "$150.000", "vendido": true,
+        "precio": "$150.000", "vendido": true, "categoria": 3
         }, {
         "desc": "Picadora Moulinex",
-        "precio": "$30.000", "vendido": true,
+        "precio": "$30.000", "vendido": true, "categoria": 2
         }, {
         "desc": "Licuadora Phillips",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 2
         }, {
         "desc": "Pava electrica Phillips",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 2
         }, {
         "desc": "Olla extra grande 28cm Tramontina",
-        "precio": "$40.000", "vendido": false,
+        "precio": "$40.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Olla a presión Marmicoc",
-        "precio": "$30.000", "vendido": true,
+        "precio": "$30.000", "vendido": true, "categoria": 2
         }, {
         "desc": "Ensaladera de losa blanca",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Ensaladera de madera",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Medidor de vidrio grande",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Mueble de madera maciza",
-        "precio": "$90.000", "vendido": true,
+        "precio": "$90.000", "vendido": true, "categoria": 3
         }, {
         "desc": "Termnos importados marca Maxso (precio cada uno)",
-        "precio": "$20.000", "vendido": true,
+        "precio": "$20.000", "vendido": true, "categoria": 2
         }, {
         "desc": "Tupper Maped Picnic (precio cada uno)",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Juego de comoda con 2 mesitas de luz (no salen en la foto)",
-        "precio": "$140.000", "vendido": false,
+        "precio": "$140.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Juguetes muñecas Barbie original (precio por cada muñecua)",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguetes muñecas LOL original (precio por cada muñecua)",
-        "precio": "$5.000", "vendido": false,
+        "precio": "$5.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Fischer-Price original Dinosaurio grande",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Sillas de jardin, juego completo",
-        "precio": "$20.000", "vendido": true,
+        "precio": "$20.000", "vendido": true, "categoria": 7
         }, {
         "desc": "Muñecuas Lallaloopsy originales (precio por cada muñecua)",
-        "precio": "$12.000", "vendido": false,
+        "precio": "$12.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Bicicleta Mussetta Rodado 24 Vintage",
-        "precio": "$125.000", "vendido": true,
+        "precio": "$125.000", "vendido": true, "categoria": 4
         }, {
         "desc": "Bicicleta Blueray Rodado 24 ",
-        "precio": "$80.000", "vendido": true,
+        "precio": "$80.000", "vendido": true, "categoria": 4
         }, {
         "desc": "Bicicleta Zenith Rodado 26",
-        "precio": "$60.000", "vendido": true,
+        "precio": "$60.000", "vendido": true, "categoria": 4
         }, {
         "desc": "Bicicleta Vairo Rodado 26",
-        "precio": "$60.000", "vendido": true,
+        "precio": "$60.000", "vendido": true, "categoria": 4
         }, {
         "desc": "Bicicleta GT Bikes Rodado 20 para prueba",
-        "precio": "$80.000", "vendido": true,
+        "precio": "$80.000", "vendido": true, "categoria": 4
         }, {
         "desc": "Bicicleta Raleigh Rodado 26",
-        "precio": "$200.000", "vendido": true,
+        "precio": "$200.000", "vendido": true, "categoria": 4
         }, {
         "desc": "Sillon Luis XV",
-        "precio": "$300.000", "vendido": false,
+        "precio": "$300.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Reloj de pared vintage",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Batidora de pie planetaria Liliana",
-        "precio": "$60.000", "vendido": false,
+        "precio": "$60.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Juego de sillones exterior para galeria",
-        "precio": "$120.000", "vendido": true,
+        "precio": "$120.000", "vendido": true, "categoria": 3
         }, {
         "desc": "Arbolito de Navidad completo altura total 1,70 mts",
-        "precio": "$50.000", "vendido": false,
+        "precio": "$50.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Juego de mesa Dominion Big Box (en ingles), con Alchemy y Prosperity ",
-        "precio": "$60.000", "vendido": false,
+        "precio": "$60.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Diplomacy (version original en ingles)",
-        "precio": "$30.000", "vendido": false,
+        "precio": "$30.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Clue",
-        "precio": "$11.000", "vendido": false,
+        "precio": "$11.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Crucigrama, version local del Scrabble ",
-        "precio": "$6.000", "vendido": false,
+        "precio": "$6.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Risk (en ingles), version de EEUU del TEG ",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa La Clave del Escorpion",
-        "precio": "$5.000", "vendido": false,
+        "precio": "$5.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Jumanji",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Pit (original en ingles)",
-        "precio": "$21.000", "vendido": true,
+        "precio": "$21.000", "vendido": true, "categoria": 0
         }, {
         "desc": "Juego de mesa Rack-O (original en ingles)",
-        "precio": "$22.000", "vendido": true,
+        "precio": "$22.000", "vendido": true, "categoria": 0
         }, {
         "desc": "Juego de cartas Set (original en ingles)",
-        "precio": "$18.000", "vendido": false,
+        "precio": "$18.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Codigo Secreto",
-        "precio": "$19.000", "vendido": true,
+        "precio": "$19.000", "vendido": true, "categoria": 0
         }, {
         "desc": "Juego de mesa Tuf.Abet (original en ingles)",
-        "precio": "$12.000", "vendido": true,
+        "precio": "$12.000", "vendido": true, "categoria": 0
         }, {
         "desc": "Juego de mesa Qwirkle (en ingles) ",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 0
         },{
         "desc": "Juego de mesa Carcassone (original en ingles) con dos cajas de expansiones",
-        "precio": "$50.000", "vendido": true,
+        "precio": "$50.000", "vendido": true, "categoria": 0
         }, {
         "desc": "Juego de mesa 7wonders Duel (original en ingles) con expansion Pantheon",
-        "precio": "$38.000", "vendido": false,
+        "precio": "$38.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Carcassone Junior (original en ingles)",
-        "precio": "$28.000", "vendido": false,
+        "precio": "$28.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Forbidden Island (en ingles)",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de cartas 1000 millas",
-        "precio": "11.000", "vendido": false,
+        "precio": "11.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Lost Cities 2 player (en ingles)",
-        "precio": "$18.000", "vendido": false,
+        "precio": "$18.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Clue Jr (en ingles)",
-        "precio": "$18.000", "vendido": false,
+        "precio": "$18.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa TransEuropa (en ingles)",
-        "precio": "$48.000", "vendido": false,
+        "precio": "$48.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Power Grid (en ingles)",
-        "precio": "$48.000", "vendido": false,
+        "precio": "$48.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Ticket to Ride Rails & Sails (en ingles)",
-        "precio": "$68.000", "vendido": false,
+        "precio": "$68.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Ticket To Ride Europa (en ingles)",
-        "precio": "$48.000", "vendido": false,
+        "precio": "$48.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Expansion Juego de mesa Ticket to Ride Europa 1912 (en ingles)",
-        "precio": "$30.000", "vendido": false,
+        "precio": "$30.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Ticket to Ride (en ingles) Mapa EEUU",
-        "precio": "$48.000", "vendido": true,
+        "precio": "$48.000", "vendido": true, "categoria": 0
         }, {
         "desc": "Expansion Juego de mesa Ticket to Ride EEUU 1910 (en ingles)",
-        "precio": "$30.000", "vendido": false,
+        "precio": "$30.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Ticket to Ride New York (en ingles)",
-        "precio": "$30.000", "vendido": false,
+        "precio": "$30.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Ticket to Ride Nordic Countries (en ingles)",
-        "precio": "$46.000", "vendido": false,
+        "precio": "$46.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Ticket to India/Switzrland Countries (en ingles)",
-        "precio": "$38.000", "vendido": false,
+        "precio": "$38.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Ticket to Ride United Kingdom / Pennsylvania (en ingles)",
-        "precio": "$38.000", "vendido": false,
+        "precio": "$38.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Ticket to Ride Poland (en ingles)",
-        "precio": "$28.000", "vendido": false,
+        "precio": "$28.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa Ticket to Ride Märklin Alemania (en ingles)",
-        "precio": "$28.000", "vendido": false,
+        "precio": "$28.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa 7 Wonders (en ingles)",
-        "precio": "$65.000", "vendido": false,
+        "precio": "$65.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguetes - Set de cubos Rubik",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Freezer Peabody Vertical Pe-fv80 90 Litros",
-        "precio": "$295.000", "vendido": false,
+        "precio": "$295.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Bandejas de acero inoxidable (precio por cada una)",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Bandeja de decoración plástico duro",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Bandeja chica",
-        "precio": "$5.000", "vendido": false,
+        "precio": "$5.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Conejo decoración 23cm",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Lechuza decoración 13cm",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Lechuza decoración 10cm cerámica",
-        "precio": "$6.000", "vendido": false,
+        "precio": "$6.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Bandeja antigua de acero y hierro grande ",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Libro Todo Mafalda - Colección completa",
-        "precio": "$30.000", "vendido": false,
+        "precio": "$30.000", "vendido": false, "categoria": 6
         }, {
         "desc": "Libo Van Gogh La Obra Completa: pintura",
-        "precio": "$35.000", "vendido": false,
+        "precio": "$35.000", "vendido": false, "categoria": 6
         }, {
         "desc": "Decoración moderna acero",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Mesita redonda estilo francés Luis VX",
-        "precio": "$75.000", "vendido": true,
+        "precio": "$75.000", "vendido": true, "categoria": 3
         }, {
         "desc": "Aspirador Robot Ecovacs Deebot 661 wifi mopa",
-        "precio": "240.000", "vendido": true,
+        "precio": "240.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Celador Acero Inoxidable",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Celador Acero Inoxidable",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Cuadros de Mar (2 se venden juntos)",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Reposera blanca rigida",
-        "precio": "$45.000", "vendido": true,
+        "precio": "$45.000", "vendido": true, "categoria": 7
         }, {
         "desc": "Reposera blanca rigida",
-        "precio": "$45.000", "vendido": true,
+        "precio": "$45.000", "vendido": true, "categoria": 7
         }, {
         "desc": "Cama Saltarina Grande (4 metros)",
-        "precio": "$250.000", "vendido": false,
+        "precio": "$250.000", "vendido": false, "categoria": 7
         }, {
         "desc": "Juguetes muñecas Barbies original (precio por muñeca)",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Gatito Disney",
-        "precio": "$6.000", "vendido": false,
+        "precio": "$6.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Jueguete Caballo Spirit",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeco Osito",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Cartuchera Popit",
-        "precio": "$3.000", "vendido": false,
+        "precio": "$3.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Set de Revistas de figuritas de los Mundiales",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguetes Bebotes importados (precio por muñeco)",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeca de trapo chica",
-        "precio": "$5.000", "vendido": false,
+        "precio": "$5.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeca de trapo larga",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeca Pepa Pig única",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeca Moana original",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeco Shimmeez",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeca de trapo",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeca American Girl original",
-        "precio": "$30.000", "vendido": false,
+        "precio": "$30.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeca Oveja de Trapo",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeca de trapo",
-        "precio": "$12.000", "vendido": false,
+        "precio": "$12.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Ositos importados (precio cada uno)",
-        "precio": "$5.000", "vendido": false,
+        "precio": "$5.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de Crochet",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Set Diarios Secretos Gravity Falls",
-        "precio": "$12.000", "vendido": false,
+        "precio": "$12.000", "vendido": false, "categoria": 6
         }, {
         "desc": "Juguete Muñeco Caballito con ruedas",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Mochila",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Leon de peluche",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juego de mesa 4 en linea",
-        "precio": "$12.000", "vendido": false,
+        "precio": "$12.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Carterita Popit",
-        "precio": "$5.000", "vendido": false,
+        "precio": "$5.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Carterita Popit",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Pistola Mini NERF Fortnite Scar",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Pistola NERF Double Dealer + doce balas - funciona bien pero se puede trabar",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Espada Star Wars Dinsey original con ruido y luz",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeca Masha y el Oso, canta",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeca Tys originales (precio por muñeca)",
-        "precio": "$7.000", "vendido": false,
+        "precio": "$7.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Muñeca Baby Cry mini",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Set Muñecos Crochet",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Pistola Bajo Terra importada mas 6 balas",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Libo para hacer aviones de papel",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 6
         }, {
         "desc": "Juguete Canasta mimbre",
-        "precio": "$6.000", "vendido": false,
+        "precio": "$6.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Libro Harry Potter Nuevo",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 6
         }, {
         "desc": "Juguete Muñeco Storm Troopers Star Wars original hace ruido",
-        "precio": "$12.000", "vendido": false,
+        "precio": "$12.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Comic Gravity Falls",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 6
         }, {
         "desc": "Rollers regulables talle Small marca Lamborghini",
-        "precio": "$35.000", "vendido": false,
+        "precio": "$35.000", "vendido": false, "categoria": 4
         }, {
         "desc": "Juguete Pistola Nerf Mini con 3 balas",
-        "precio": "$5.000", "vendido": false,
+        "precio": "$5.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Juguete Pistola Nerf Stampede, requiere pilas con 6 balas",
-        "precio": "$80.000", "vendido": false,
+        "precio": "$80.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Set 4 Almohadones nórdicos peludos",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Set 8 almohadones",
-        "precio": "$20.000", "vendido": true,
+        "precio": "$20.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Diccionario Ingles Oxford",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 6
         }, {
         "desc": "Decoración Mapamundi Globo Terraqueo",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Órgano Baldwin para arreglar",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Armario para copas con 2 cajones madera guatambu 0,54x1,94",
-        "precio": "$60.000", "vendido": false,
+        "precio": "$60.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Fondue",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Microondas LG (funciona OK)",
-        "precio": "$30.000", "vendido": true,
+        "precio": "$30.000", "vendido": true, "categoria": 2
         }, {
         "desc": "Hornito Yelmo (funciona OK)",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 2
         }, {
         "desc": "2 acolchados iguales 1 plaza (precio por cada uno)",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 1
         }, {
         "desc": "2 acolchados refversibles importados(precio por cada uno)",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 1
         }, {
         "desc": "2 acolchados iguales (precio por cada uno)",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Frazadas importadas con corderito (precio por cada uno)",
-        "precio": "$18.000", "vendido": true,
+        "precio": "$18.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Cama de 1 plaza",
-        "precio": "$40.000", "vendido": false,
+        "precio": "$40.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Cama de 1 plaza",
-        "precio": "$40.000", "vendido": false,
+        "precio": "$40.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Frazada ultra calentita importada (solo queda la marron)",
-        "precio": "$18.000", "vendido": false,
+        "precio": "$18.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Catre Blanco de 1 plaza con colchon",
-        "precio": "$60.000", "vendido": false,
+        "precio": "$60.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Cama de 1 plaza laqueadas masizas",
-        "precio": "$80.000", "vendido": true,
+        "precio": "$80.000", "vendido": true, "categoria": 3
         }, {
         "desc": "Cama de 1 plaza laqueadas masizas",
-        "precio": "$80.000", "vendido": true,
+        "precio": "$80.000", "vendido": true, "categoria": 3
         }, {
         "desc": "TV Noblex LED 32\" (80 cms de vision)",
-        "precio": "$75.000", "vendido": false,
+        "precio": "$75.000", "vendido": false, "categoria": 8
         }, {
         "desc": "Auriculares alta gama Mpow con reduccion de ruido",
-        "precio": "$18.000", "vendido": false,
+        "precio": "$18.000", "vendido": false, "categoria": 8
         }, {
         "desc": "Mochila termica importada marca Ozark Trails, excelente para llevar cervezas en caminata",
-        "precio": "$40.000", "vendido": true,
+        "precio": "$40.000", "vendido": true, "categoria": 10
         }, {
         "desc": "Chevrolet Spin 7 Asientos Diesel 1.3 (se entrega despues de chapa y pintura de detalles) 189.000 km reales",
-        "precio": "USD8.000", "vendido": false,
+        "precio": "USD8.000", "vendido": false, "categoria": 10
         }, {
         "desc": "Adorno para poner collares",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Alcochado para cama queen",
-        "precio": "$30.000", "vendido": false,
+        "precio": "$30.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Poncho de lana de oveja mujer como nuevo",
-        "precio": "$55.000", "vendido": false,
+        "precio": "$55.000", "vendido": false, "categoria": 5
         }, {
         "desc": "Campera M Uniclo (arreglar cierre)",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 5
         }, {
         "desc": "Campera Jean Corderito",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 5
         }, {
         "desc": "Campera S de Duvet como nueva importada",
-        "precio": "$55.000", "vendido": false,
+        "precio": "$55.000", "vendido": false, "categoria": 5
         }, {
         "desc": "Campera sin uso S/M importada super calentita",
-        "precio": "$50.000", "vendido": false,
+        "precio": "$50.000", "vendido": false, "categoria": 5
         }, {
         "desc": "Campera militar cancherisima Miss Sixty S",
-        "precio": "$30.000", "vendido": false,
+        "precio": "$30.000", "vendido": false, "categoria": 5
         }, {
         "desc": "Campera azul para Varon/Mujer entre 14/16 años nueva",
-        "precio": "$45.000", "vendido": false,
+        "precio": "$45.000", "vendido": false, "categoria": 5
         }, {
         "desc": "Juego Ajedrez 37cm x 19cm",
-        "precio": "$6.000", "vendido": false,
+        "precio": "$6.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Mochila con bolsillo interno para notebook",
-        "precio": "$17.000", "vendido": false,
+        "precio": "$17.000", "vendido": false, "categoria": 10
         }, {
         "desc": "Binoculares Konus 8x21 con funda",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 10
         }, {
         "desc": "Portaretrato de 4 fotos 15\"x21\"",
-        "precio": "$5.000", "vendido": true,
+        "precio": "$5.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Portaretrato de 4 fotos 15\"x21\"",
-        "precio": "$5.000", "vendido": true,
+        "precio": "$5.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Colchoneta inflabe para camping ThermaRest importada 120x54",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Colchoneta inflabe para camping ThermaRest importada 120x54",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 9
         }, {
         "desc": "Raqueta Tenis Wilson Blade casi nueva",
-        "precio": "$180.000", "vendido": false,
+        "precio": "$180.000", "vendido": false, "categoria": 4
         }, {
         "desc": "Raqueta Tenis Wilson",
-        "precio": "$85.000", "vendido": false,
+        "precio": "$85.000", "vendido": false, "categoria": 4
         }, {
         "desc": "Set 6 Sillas Windsor madera originales antiguas",
-        "precio": "$225.000", "vendido": false,
+        "precio": "$225.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Mesa maciza algarrobo lijada 240x110x75",
-        "precio": "$480.000", "vendido": false,
+        "precio": "$480.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Espejo con marco de madera laqueada 104x74",
-        "precio": "$90.000", "vendido": false,
+        "precio": "$90.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Sillones antiguos de hierro (precio por cada uno)",
-        "precio": "$65.000", "vendido": false,
+        "precio": "$65.000", "vendido": false, "categoria": 7
         }, {
         "desc": "Balanza Electronica Digital Cocina 1gr A 5kg Tara Precision Capacidad Máxima 5 Kg Color Blanco",
-        "precio": "$9.000", "vendido": true,
+        "precio": "$9.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Selladora de bolsa 20cm",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 10
         }, {
         "desc": "Lampara de escritorio Daewoo Pantalla Metal",
-        "precio": "$30.000", "vendido": true,
+        "precio": "$30.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Planta con maceta grande Montesquera oblicua",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 1
         }, {
-        "desc": "Plata grande interior Filodendro con maceta",
-        "precio": "$20.000", "vendido": false,
+        "desc": "Planta grande interior Filodendro con maceta",
+        "precio": "$20.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Planta interior grande con maceta Dieffenbachia",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Planta palo de agua con maceta",
-        "precio": "$12.000", "vendido": false,
+        "precio": "$12.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Aspiradora robot Deebot 661 con mopa",
-        "precio": "$250.000", "vendido": false,
+        "precio": "$250.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Biblioteca madera maciza 1,75x1,00",
-        "precio": "$60.000", "vendido": false,
+        "precio": "$60.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Mueble con cuatro canastos",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Guardador de jueguetes/etcde madera laqueado",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Estanteria de madera guatambu 1,81x0,68",
-        "precio": "$80.000", "vendido": false,
+        "precio": "$80.000", "vendido": false, "categoria": 3
         }, {
         "desc": "2 banquitos altos para desayunador",
-        "precio": "$30.000", "vendido": true,
+        "precio": "$30.000", "vendido": true, "categoria": 2
         }, {
         "desc": "Mesa maciza ratona pinotea 88x150x44",
-        "precio": "$250.000", "vendido": false,
+        "precio": "$250.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Bandeja de vidrio Pirex grande 34,5x23,5",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Estanteria de acero 160x75x35",
-        "precio": "$35.000", "vendido": false,
+        "precio": "$35.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Mochila niña",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Mochila nueva 31cm x 25cm",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Patines profesionales Talle 34",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 4
         }, {
         "desc": "Campera Wanama muy calentita talle 40",
-        "precio": "$40.000", "vendido": false,
+        "precio": "$40.000", "vendido": false, "categoria": 5
         }, {
         "desc": "Zapatillas Vans talle 36",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 5
         }, {
         "desc": "Silla Tulip",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Casco Equitación Kylin 54",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 4
         }, {
         "desc": "Fusta equitación impecable",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 4
         }, {
         "desc": "Polainas equitaciòn",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 4
         }, {
         "desc": "Palo de Hockey Argentina niño 86cm",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 4
         }, {
         "desc": "Termo plastico",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Guarda tortas de plastico",
-        "precio": "$4.000", "vendido": false,
+        "precio": "$4.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Combo para hacer torta",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Dos Mancuernas ajustables 5kg + barrita",
-        "precio": "$50.000", "vendido": true,
+        "precio": "$50.000", "vendido": true, "categoria": 4
         }, {
         "desc": "Picadora de ajo",
-        "precio": "$7.000", "vendido": false,
+        "precio": "$7.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Set utensillos torta",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 2
         }, {
         "desc": "6 compoteras de plastico",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Pisa papa",
-        "precio": "$3.000", "vendido": false,
+        "precio": "$3.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Cuchara servidora de helado",
-        "precio": "$5.000", "vendido": false,
+        "precio": "$5.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Set de utensillos de cocina de madera",
-        "precio": "$12.000", "vendido": false,
+        "precio": "$12.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Frasco Largo de Vidrio para Spaghetti",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Frasco de vidrio",
-        "precio": "$6.000", "vendido": true,
+        "precio": "$6.000", "vendido": true, "categoria": 2
         }, {
         "desc": "Frasco de vidrio",
-        "precio": "$7.000", "vendido": true,
+        "precio": "$7.000", "vendido": true, "categoria": 2
         }, {
         "desc": "Fuente de vidrio Pirex grande",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 2
         }, {
         "desc": "Tupper redondo para pizza o tarta",
-        "precio": "$3.500", "vendido": false,
+        "precio": "$3.500", "vendido": false, "categoria": 2
         }, {
         "desc": "Amplificador Guitarra Sunset nuevo con etiqueta",
-        "precio": "$90.000", "vendido": false,
+        "precio": "$90.000", "vendido": false, "categoria": 10
         }, {
         "desc": "Mesa exterior de galeria con 6 sillas",
-        "precio": "$125.000", "vendido": false,
+        "precio": "$125.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Bate Softball profesional importado Louisville Slugger",
-        "precio": "$15.000", "vendido": true,
+        "precio": "$15.000", "vendido": true, "categoria": 4
         }, {
         "desc": "Funda Cubrecolchon 2 plazas sin uso",
-        "precio": "$20.000", "vendido": false,
+        "precio": "$20.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Flauta melodica Stagg escolar",
-        "precio": "$18.000", "vendido": false,
+        "precio": "$18.000", "vendido": false, "categoria": 10
         }, {
         "desc": "Hamaca paraguaya",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 7
         }, {
         "desc": "Plancha Black and Decker Power Pro",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Dos pesas 5kg",
-        "precio": "$5.000", "vendido": false,
+        "precio": "$5.000", "vendido": false, "categoria": 4
         }, {
         "desc": "Comoda con mesa luz marmol",
-        "precio": "$800.000", "vendido": false,
+        "precio": "$800.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Comoda estilo frances marmol",
-        "precio": "$500.000", "vendido": false,
+        "precio": "$500.000", "vendido": false, "categoria": 3
         }, {
         "desc": "Bolsa de dormir niño",
-        "precio": "$18.000", "vendido": false,
+        "precio": "$18.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Bolsa de dormir niño",
-        "precio": "$18.000", "vendido": false,
+        "precio": "$18.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Libros Diario de Greg (precio cada uno)",
-        "precio": "$6.000", "vendido": false,
+        "precio": "$6.000", "vendido": false, "categoria": 6
         }, {
         "desc": "Binoculares Montagne 12x32 con funda",
-        "precio": "$22.000", "vendido": false,
+        "precio": "$22.000", "vendido": false, "categoria": 10
         }, {
         "desc": "Pistola Revolver Juguete a Cebita 12 disparos",
-        "precio": "$2.000", "vendido": false,
+        "precio": "$2.000", "vendido": false, "categoria": 0
         }, {
         "desc": "Nebulizador",
-        "precio": "$25.000", "vendido": false,
+        "precio": "$25.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Plumón duvet queen y su cubre plumón usado",
-        "precio": "$60.000", "vendido": true,
+        "precio": "$60.000", "vendido": true, "categoria": 1
         }, {
         "desc": "Plumón duvet queen y cubre plumón",
-        "precio": "$100.000", "vendido": false,
+        "precio": "$100.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Amazon ECHO (4ta Generación) sonido de alta calidad y hub de Smart Home y Alexa",
-        "precio": "$180.000", "vendido": false,
+        "precio": "$180.000", "vendido": false, "categoria": 8
         }, {
         "desc": "Cajón de madera grande",
-        "precio": "$10.000", "vendido": false,
+        "precio": "$10.000", "vendido": false, "categoria": 1
         }, {
         "desc": "3 Chapas para decorar",
-        "precio": "$8.000", "vendido": false,
+        "precio": "$8.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Fuelle grande para avivar fuego asado",
-        "precio": "$15.000", "vendido": false,
+        "precio": "$15.000", "vendido": false, "categoria": 1
         }, {
         "desc": "Mesa de comedor madera maciza 140 x 80",
-        "precio": "$180.000", "vendido": false,
+        "precio": "$180.000", "vendido": false, "categoria": 3
         }];
       function show(num) {
         item = String(num).padStart(5, '0');
@@ -1099,6 +1112,18 @@
         if (filtro == '') {
           document.getElementById('filtro').value = "";
         }
+      }
+      function categoria(filtro) {
+        for(let i=0;i < webElements.length;i++) {
+          item = String(i+1).padStart(5, '0');
+          text = webElements[i].desc;
+          if(webElements[i].categoria == filtro) {
+            document.getElementById('row'+item).style.display = "flex";
+          }
+          else {
+            document.getElementById('row'+item).style.display = "none";
+          }
+        };
       }
       function cargar(webElements) {
         var row = "";
@@ -1144,10 +1169,25 @@
       <p>Se puede ver la imagen de cada item presionando el boton de Ver y luego se puede sacar presionando el mismo boton que dice Esc.</p>
       </section>
       <section>
-        <p class="negrita">Usar filtro para buscar mejor.</p>
+        <p class="negrita">Filtrar con texto con el boton Filtro. Los demas botones sirven para ver cada categoría.</p>
       <input type="text" name="enter" class="enter" value="" id="filtro"/>
       <button class='filtrar' type='button' onclick="filtrar(document.getElementById('filtro').value,webElements)">Filtrar</button>
-      <button class='filtrar' type='button' onclick="filtrar('',webElements)">Volver</button>
+    </section>
+    <section>
+      <button class='filtrar' type='button' onclick="categoria(0)">Juegos/Juguetes</button>
+      <button class='filtrar' type='button' onclick="categoria(1)">Decoración/Casa</button>
+      <button class='filtrar' type='button' onclick="categoria(2)">Cocina</button>
+      <button class='filtrar' type='button' onclick="categoria(3)">Muebles</button>
+      <button class='filtrar' type='button' onclick="categoria(4)">Deportes/Fitness</button>
+      <button class='filtrar' type='button' onclick="categoria(5)">Ropa</button>
+      <button class='filtrar' type='button' onclick="categoria(6)">Libros</button>
+      <button class='filtrar' type='button' onclick="categoria(7)">Jardín</button>
+      <button class='filtrar' type='button' onclick="categoria(8)">Tecnología</button>
+      <button class='filtrar' type='button' onclick="categoria(9)">Trekking</button>
+      <button class='filtrar' type='button' onclick="categoria(10)">Otros</button>
+    </section>
+    <section>
+      <button class='filtrar' type='button' onclick="filtrar('',webElements)">Lista Completa</button>
     </section>
     <section>
       <ul class="space_list" id="mylist"></ul>
