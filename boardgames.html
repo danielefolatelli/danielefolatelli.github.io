@@ -305,7 +305,7 @@
         "precio": "$65.000", "vendido": false,
         }];
       function show(num) {
-        item = String(num).padStart(5, '0');
+        item = String(num).padStart(5, '0') + 80;
           document.getElementById("image"+item)
               .style.display = "block";
           document.getElementById("showID"+item)
@@ -314,7 +314,7 @@
               .style.display = "block";  
       }
       function hide(num) {
-        item = String(num).padStart(5, '0');
+        item = String(num).padStart(5, '0') + 80;
           document.getElementById("image"+item)
               .style.display = "none";
           document.getElementById("showID"+item)
