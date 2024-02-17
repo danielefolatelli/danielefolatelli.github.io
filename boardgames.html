@@ -327,7 +327,7 @@
         var row = "";
         for(let i = 0;i < webElements.length;i++)
         {
-          item = String(i+81).padStart(5, '0');
+          item = String(i+1).padStart(5, '0');
           if (webElements[i].vendido) {
             row = row
             + "<li id='row" + item + "' class='vendido'>"
@@ -338,6 +338,7 @@
             + "</li>"; 
           }
           else {
+            item2 = String(i+81).padStart(5, '0');
             row = row
             + "<li id='row" + item + "'>"
             + "<div class='numero'>" + (i+1) + ".</div>"
@@ -347,7 +348,7 @@
             + "<button id='hideID"+ item +"' type='button' onclick='hide(" + (i+1) + ")' class='hidebutton'>Esc</button>"
             + "</li>"
             + "<div class='center'>"
-            + "<img id='image" + item + "' src='https://media.publit.io/file/USADOS" + item + ".jpg' class='image'>"
+            + "<img id='image" + item + "' src='https://media.publit.io/file/USADOS" + item2 + ".jpg' class='image'>"
             + "</div>"; 
           }
         };
