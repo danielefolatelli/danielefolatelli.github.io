@@ -303,9 +303,6 @@
         }, {
         "desc": "Juego de mesa 7 Wonders (en ingles)",
         "precio": "$65.000", "vendido": false,
-        }, {
-        "desc": "Libro The World of Ice & Fire (en ingles, tapa dura) - The Game of Thrones",
-        "precio": "$80.000", "vendido": false, "categoria": 6
         }];
       function show(num) {
         item = String(num).padStart(5, '0');
@@ -330,9 +327,7 @@
         var row = "";
         for(let i = 0;i < webElements.length;i++)
         {
-          if (i == 34) 
-          {item = '00000286';}
-          else {item = String(i+1).padStart(5, '0') + 80;}
+          item = String(i+1).padStart(5, '0') + 80;
           if (webElements[i].vendido) {
             row = row
             + "<li id='row" + item + "' class='vendido'>"
